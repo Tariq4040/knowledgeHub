@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact Page
+{% endblock title %}
+
+{% block body %}
+<div>
+  <img src="/static/imgs/contact.jpg" class="d-block" alt="Not Showing Images yet." , height="400" , width="100%">
+</div>
+
+<div class="container container-sm">
+  <h1 style="text-transform: uppercase;text-align: center;margin: 40px;">
+    Contact Us
+  </h1>
+  
+  <!-- Form Code Satrt.... -->
+  <form class="row g-3" method="POST" action="/contact">
+  {% csrf_token %}
+    <div class="col-md-6">
+      <label for="user name" class="form-label">User Name</label>
+      <input type="text" name="name" class="form-control" id="name" placeholder="Muhammad Tariq Ahmad" required>
+    </div>
+    <div class="col-md-6">
+      <label for="Email" class="form-label">Email</label>
+      <input type="email" name="email" id="email" class="form-control" placeholder="chtariq14409@gmail.com">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Address</label>
+      <input type="text" name="adrs" class="form-control" id="inputAddress" placeholder="1234 Main Str abx">
+    </div>
+    
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">City</label>
+      <input type="text" name="city" class="form-control" id="inputCity" placeholder="Sahiwal">
+    </div>
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">State</label>
+      <select id="inputState" class="form-select" disabled>
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="text" name="zip" class="form-control" id="inputZip" placeholder="57000">
+    </div>
+
+    <div class="mb-3">
+      <label for="Textarea1" class="form-label">Explain Your Query??</label>
+      <textarea class="form-control" name="disc" id="Textarea1" rows="4" placeholder="why you are contact us,explain briefly"></textarea>
+    </div>
+
+    <div class="col-12">
+      <div class="form-check" >
+        <input class="form-check-input" type="checkbox" id="gridCheck" disabled>
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-lg px-5 btn-outline-success">Sign in</button>
+    </div>
+  </form>
+</div>
+
+{% endblock body %}

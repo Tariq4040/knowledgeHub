@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %} Personal Informations
+{% endblock title %}
+
+{% block body %}
+<div>
+  <img src="/static/imgs/contact.jpg" class="d-block" alt="Not Showing Images yet." , height="400" , width="100%">
+</div>
+
+<div class="container container-sm">
+  <h1 style="text-transform: uppercase;text-align: center;margin: 40px;">
+    Personal Contact
+  </h1>
+<div class="container">
+  <form class="row g-3" method="post" action="/personal_contactForm">
+    {% csrf_token %}
+    <div class="col-md-6">
+      <label for="user name" class="form-label">User Name</label>
+      <input type="text" name="name" class="form-control" required placeholder="Enter Your Name">
+    </div>
+    <div class="col-md-6">
+      <label for="Phone No" class="form-label">Phone No</label>
+      <input type="phone" name="pNo" class="form-control" required placeholder="Enter Your Phone No Pleasee">
+    </div>
+    {% comment %} <div class="col-md-6">
+      <label for="inputState" class="form-label">Select Country</label>
+      <select id="inputState" name="country" class="form-select" disabled>
+        <option selected>Choose...</option>
+        <option>Pakistan</option>
+        <option>China</option>
+        <option>England</option>
+        <option>Australia</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label for="inputState" class="form-label">State</label>
+      <select id="inputState" name="state" class="form-select" disabled>
+        <option selected>Choose...</option>
+        <option>Punjab</option>
+        <option>KPK</option>
+        <option>Sindh</option>
+        <option>Balochistan</option>
+      </select>
+    </div> {% endcomment %}
+    <div class="col-12 text-center">
+      <button type="submit" class="btn btn-lg center px-5 btn-outline-success">Submit Informations</button>
+    </div>
+  </form>
+
+</div>
+{% endblock body %}
+</body>
+
+</html>
